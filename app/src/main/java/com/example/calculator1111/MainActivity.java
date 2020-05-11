@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Button dot;
     Button equal;
     EditText ed;
-    String str="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +68,22 @@ public class MainActivity extends AppCompatActivity {
                 ed.setSelection(ed.getText().length());
             }
         });
-        ed.setOnClickListener(new View.OnClickListener() {
+        offload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!(show_equation.toString().equals(""))) {
+                    char temp = show_equation.charAt(show_equation.length() - 1);
+                    if (temp>0||temp == '+' || temp == '-' || temp == '*' || temp == '/') {
+                        show_equation.deleteCharAt(show_equation.length() - 1);
+                        show_equation.append("-");
+                    } else
+                        show_equation.append("+");
+                    ed.setText(show_equation);
+                    ed.setSelection(ed.getText().length());
+                }
+            }
+        });
+        num0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 if(!(show_equation.toString().equals("0"))){

@@ -16,7 +16,7 @@
             android:id="@+id/_ed"
             android:layout_width="match_parent"
             android:layout_height="180sp"
-            android:textSize="80dp"
+            android:textSize="70dp"
             android:text="0"
             android:textColor="@android:color/white"
             android:gravity="right|bottom" />
